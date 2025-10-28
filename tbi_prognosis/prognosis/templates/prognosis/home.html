@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TBI Prognosis Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #e8f8f5, #d1eaf5);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .hospital-icon {
+            font-size: 36px;
+            color: white;
+        }
+
+        .subheading {
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* Main content styles */
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            flex-grow: 1;
+        }
+
+        .container h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #0f2027, #2c5364);
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #2c5364, #0f2027);
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            color: #d1ecf1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Utility styles */
+        .highlight {
+            font-weight: bold;
+            color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-title">
+            <span class="hospital-icon">&#x2695;</span>
+            TBI Prognosis Predictor
+        </div>
+        <p class="subheading">"Improving Lives with Accurate Diagnosis"</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to the TBI Prognosis Predictor</h1>
+        <p>
+            Our advanced <span class="highlight">Traumatic Brain Injury (TBI) Prognosis Predictor</span> leverages cutting-edge 
+            machine learning technologies to assist healthcare professionals in making accurate and timely decisions for their patients. 
+            Designed for hospitals and medical institutions, this tool aims to improve patient outcomes and streamline diagnosis processes.
+        </p>
+        <p>
+            Use the predictor to evaluate a patient's condition based on critical indicators like 
+            <span class="highlight">Glasgow Coma Scale (GCS)</span>, 
+            <span class="highlight">Glasgow Outcome Scale (GOS)</span>, and other vital metrics.
+        </p>
+        <a href="/predict/" class="btn">Start Prediction</a>
+
+        <p class="quote">
+            "Healing is a matter of time, but it is sometimes also a matter of opportunity." – Hippocrates
+        </p>
+
+        <div class="details">
+            <h3><center><b>About GCS and GOS:</b></center></h3>
+            <p>
+                The <span class="highlight">Glasgow Coma Scale (GCS)</span> is a neurological scale used to measure a patient's level of consciousness after a traumatic brain injury. 
+                It evaluates three key areas: eye-opening response, verbal response, and motor response, with scores ranging from 3 (deep unconsciousness) to 15 (fully awake).
+            </p>
+            <p>
+                The <span class="highlight">Glasgow Outcome Scale (GOS)</span> helps assess recovery outcomes by categorizing patients into levels such as mild disability, moderate disability, severe disability, or death. 
+                Together, these scales provide critical insights into a patient's condition and guide decision-making for treatment.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 TBI Prognosis System | Designed for <a href="#">Healthcare Professionals</a>. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TBI Prognosis Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #e8f8f5, #d1eaf5);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main content styles */
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            flex-grow: 1;
+        }
+
+        .container h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #0f2027, #2c5364);
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #2c5364, #0f2027);
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            color: #d1ecf1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Utility styles */
+        .highlight {
+            font-weight: bold;
+            color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        TBI Prognosis Predictor
+        <p style="font-size: 16px; margin: 5px 0;">"Improving Lives with Accurate Diagnosis"</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to the TBI Prognosis Predictor</h1>
+        <p>
+            Our advanced <span class="highlight">Traumatic Brain Injury (TBI) Prognosis Predictor</span> leverages cutting-edge 
+            machine learning technologies to assist healthcare professionals in making accurate and timely decisions for their patients. 
+            Designed for hospitals and medical institutions, this tool aims to improve patient outcomes and streamline diagnosis processes.
+        </p>
+        <p>
+            Use the predictor to evaluate a patient's condition based on critical indicators like 
+            <span class="highlight">Glasgow Coma Scale (GCS)</span>, 
+            <span class="highlight">Glasgow Outcome Scale (GOS)</span>, and other vital metrics.
+        </p>
+        <a href="/predict/" class="btn">Start Prediction</a>
+
+        <p class="quote">
+            "Healing is a matter of time, but it is sometimes also a matter of opportunity." – Hippocrates
+        </p>
+
+        <div class="details">
+            <h3><center><b>About GCS and GOS:</b></center></h3>
+            <p>
+                The <span class="highlight">Glasgow Coma Scale (GCS)</span> is a neurological scale used to measure a patient's level of consciousness after a traumatic brain injury. 
+                It evaluates three key areas: eye-opening response, verbal response, and motor response, with scores ranging from 3 (deep unconsciousness) to 15 (fully awake).
+            </p>
+            <p>
+                The <span class="highlight">Glasgow Outcome Scale (GOS)</span> helps assess recovery outcomes by categorizing patients into levels such as mild disability, moderate disability, severe disability, or death. 
+                Together, these scales provide critical insights into a patient's condition and guide decision-making for treatment.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 TBI Prognosis System | Designed for <a href="#">Healthcare Professionals</a>. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
+
+ {% endcomment %}

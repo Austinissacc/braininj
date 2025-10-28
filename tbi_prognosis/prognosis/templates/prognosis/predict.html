@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBI Prognosis - Predict</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #eaf6f6, #c4e0e5);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            max-width: 900px; /* Wider form */
+            width: 95%;
+            background: white;
+            padding: 30px; /* Reduced padding for shorter height */
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            font-size: 28px;
+            color: #003366;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .error-message {
+            color: red;
+            margin-bottom: 15px;
+        }
+        form label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+        input, select {
+            width: 98%; /* Wider input fields */
+            padding: 12px;
+            margin: 10px 0; /* Reduced margin */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+            outline: none;
+        }
+        .btn-container {
+            margin-top: 15px; /* Reduced margin */
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 10px 25px; /* Adjusted padding */
+            font-size: 16px; /* Kept font consistent */
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        button.reset-btn {
+            background: linear-gradient(to right, #f85032, #e73827);
+        }
+        button.reset-btn:hover {
+            background: linear-gradient(to right, #e73827, #f85032);
+        }
+        footer {
+            margin-top: 15px; /* Reduced margin */
+            font-size: 14px;
+            color: #555;
+        }
+        footer a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>TBI Prognosis Predictor</h2>
+        <p>Fill in the details below to predict the prognosis of the patient.</p>
+        {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="btn-container">
+                <button type="submit">Predict</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
+        <footer>
+            <p>Need help? <a href="/help/">Contact Support</a></p>
+        </footer>
+    </div>
+</body>
+</html>
+

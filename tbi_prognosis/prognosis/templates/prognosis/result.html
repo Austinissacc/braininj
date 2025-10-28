@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #eaf6f6, #c4e0e5);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 850px;
+            width: 90%;
+            background: white;
+            padding: 30px; /* Reduced padding */
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            font-size: 32px; /* Slightly smaller font size */
+            color: #003366;
+            margin-bottom: 15px; /* Reduced margin */
+        }
+        p {
+            font-size: 16px; /* Slightly smaller font size */
+            line-height: 1.5; /* Reduced line height */
+            margin-bottom: 15px; /* Reduced margin */
+        }
+        .highlight {
+            font-weight: bold;
+            color: #2575fc;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0; /* Reduced margin */
+            text-align: left;
+        }
+        .details-table th, .details-table td {
+            padding: 10px 12px; /* Reduced padding */
+            border: 1px solid #ddd;
+            font-size: 15px; /* Slightly smaller font size */
+        }
+        .details-table th {
+            background: #f4f4f4;
+            font-weight: bold;
+            color: #003366;
+        }
+        .details-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .quote {
+            font-style: italic;
+            color: #444;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            padding: 15px; /* Reduced padding */
+            border-radius: 12px;
+            margin: 20px 0; /* Reduced margin */
+            font-size: 18px; /* Slightly smaller font size */
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #90caf9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px; /* Reduced margin */
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 12px 35px; /* Reduced padding */
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px; /* Slightly smaller font size */
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        footer {
+            margin-top: 20px; /* Reduced margin */
+            font-size: 16px; /* Slightly smaller font size */
+            color: #444;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            padding: 20px; /* Reduced padding */
+            border-radius: 12px;
+            border: 2px solid #90caf9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 8px 0; /* Reduced margin */
+            font-weight: bold;
+            color: #333;
+            font-size: 16px; /* Slightly smaller font size */
+        }
+        footer span {
+            color: #2575fc;
+            font-style: italic;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p><strong>Prognosis:</strong> <span class="highlight">{{ prognosis_state }}</span></p>
+        <p>{{ mortality_message }}</p>
+        <p>{{ morbidity_message }}</p>
+
+        <table class="details-table">
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td><strong>Age</strong></td>
+                <td>{{ patient_data.age }}</td>
+            </tr>
+            <tr>
+                <td><strong>Time Since Injury</strong></td>
+                <td>{{ patient_data.time_since_injury }} hours</td>
+            </tr>
+            <tr>
+                <td><strong>Glasgow Coma Scale (GCS)</strong></td>
+                <td>{{ patient_data.gcs }}</td>
+            </tr>
+            <tr>
+                <td><strong>Glasgow Outcome Scale (GOS)</strong></td>
+                <td>{{ patient_data.gos }}</td>
+            </tr>
+        </table>
+
+        <div class="quote">
+            "The human brain is a remarkable organ. With care, support, and timely action, recovery is always within reach."
+        </div>
+        <a href="/predict/">Predict for Another Patient</a>
+        <footer>
+            <p>Thank you for using the <span>TBI Prognosis Predictor</span>!</p>
+            <p>We are committed to helping improve patient outcomes. <br> <span>Visit again soon!</span></p>
+        </footer>
+    </div>
+</body>
+</html>
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #eaf6f6, #c4e0e5);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            width: 90%;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            font-size: 36px;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #2575fc;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .details-table th, .details-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .details-table th {
+            background: #f4f4f4;
+            font-weight: bold;
+            color: #003366;
+        }
+        .details-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .quote {
+            font-style: italic;
+            color: #444;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #90caf9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInQuote 2s ease-in-out;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #444;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #90caf9;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInFooter 2.5s ease-in-out;
+        }
+        footer p {
+            margin: 10px 0;
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+        }
+        footer span {
+            color: #2575fc;
+            font-style: italic;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInQuote {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p><strong>Prognosis:</strong> <span class="highlight">{{ prognosis_state }}</span></p>
+        <p>{{ mortality_message }}</p>
+        <p>{{ morbidity_message }}</p>
+
+        <table class="details-table">
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td><strong>Age</strong></td>
+                <td>{{ patient_data.age }}</td>
+            </tr>
+            <tr>
+                <td><strong>Time Since Injury</strong></td>
+                <td>{{ patient_data.time_since_injury }} hours</td>
+            </tr>
+            <tr>
+                <td><strong>Glasgow Coma Scale (GCS)</strong></td>
+                <td>{{ patient_data.gcs }}</td>
+            </tr>
+            <tr>
+                <td><strong>Glasgow Outcome Scale (GOS)</strong></td>
+                <td>{{ patient_data.gos }}</td>
+            </tr>
+        </table>
+
+        <div class="quote">
+            "The human brain is a remarkable organ. With care, support, and timely action, recovery is always within reach."
+        </div>
+        <a href="/predict/">Predict for Another Patient</a>
+        <footer>
+            <p>Thank you for using the <span>TBI Prognosis Predictor</span>!</p>
+            <p>We are committed to helping improve patient outcomes. <br> <span>Visit again soon!</span></p>
+        </footer>
+    </div>
+</body>
+</html> {% endcomment %}
